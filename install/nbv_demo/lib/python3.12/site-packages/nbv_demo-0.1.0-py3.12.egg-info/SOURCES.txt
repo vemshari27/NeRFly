@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+../../build/nbv_demo/nbv_demo.egg-info/PKG-INFO
+../../build/nbv_demo/nbv_demo.egg-info/SOURCES.txt
+../../build/nbv_demo/nbv_demo.egg-info/dependency_links.txt
+../../build/nbv_demo/nbv_demo.egg-info/entry_points.txt
+../../build/nbv_demo/nbv_demo.egg-info/requires.txt
+../../build/nbv_demo/nbv_demo.egg-info/top_level.txt
+../../build/nbv_demo/nbv_demo.egg-info/zip-safe
+config/mission_params.yaml
+launch/mission.launch.py
+nbv_demo/__init__.py
+nbv_demo/image_saver_node.py
+nbv_demo/mission_node.py
+resource/nbv_demo

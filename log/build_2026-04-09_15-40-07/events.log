@@ -1,0 +1,74 @@
+[0.000000] (-) TimerEvent: {}
+[0.000808] (nbv_demo) JobQueued: {'identifier': 'nbv_demo', 'dependencies': OrderedDict()}
+[0.000845] (nbv_demo) JobStarted: {'identifier': 'nbv_demo'}
+[0.099732] (-) TimerEvent: {}
+[0.199975] (-) TimerEvent: {}
+[0.300247] (-) TimerEvent: {}
+[0.402946] (-) TimerEvent: {}
+[0.503222] (-) TimerEvent: {}
+[0.603492] (-) TimerEvent: {}
+[0.703878] (-) TimerEvent: {}
+[0.804179] (-) TimerEvent: {}
+[0.904424] (-) TimerEvent: {}
+[1.004683] (-) TimerEvent: {}
+[1.104957] (-) TimerEvent: {}
+[1.205150] (-) TimerEvent: {}
+[1.305379] (-) TimerEvent: {}
+[1.405720] (-) TimerEvent: {}
+[1.505974] (-) TimerEvent: {}
+[1.534226] (nbv_demo) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/nbv_demo', 'build', '--build-base', '/home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/build', 'install', '--record', '/home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/shinobi-wolf/PhD/NeRFly/src/nbv_demo', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'CONDA_PROMPT_MODIFIER': '(base)', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', '__EGL_VENDOR_LIBRARY_DIRS': '/home/shinobi-wolf/anaconda3/share/glvnd/egl_vendor.d', 'USER': 'shinobi-wolf', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/shinobi-wolf', 'CHROME_DESKTOP': 'code.desktop', 'CONDA_SHLVL': '1', 'OLDPWD': '/home/shinobi-wolf/PhD/PX4-Autopilot', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '2888', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1001/bus', 'COLORTERM': 'truecolor', '_CE_M': '', '_CONDA_ROOT': '/home/shinobi-wolf/anaconda3', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'shinobi-wolf', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'shinobi-wolf', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'FC_FONTATIONS': '1', 'WINDOWPATH': '2', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/shinobi-wolf/anaconda3/bin:/home/shinobi-wolf/anaconda3/condabin:/home/shinobi-wolf/.local/bin:/home/shinobi-wolf/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/opt/xtensa-esp-elf/bin/:/opt/xtensa-esp-elf/bin/', 'SESSION_MANAGER': 'local/shinobi-wolf:@/tmp/.ICE-unix/2852,unix/shinobi-wolf:/tmp/.ICE-unix/2852', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/8a32344a_6d4d_4169_8f57_1687b3d8620d', 'XDG_RUNTIME_DIR': '/run/user/1001', 'GDK_BACKEND': 'x11', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1001/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.112', 'SSH_AUTH_SOCK': '/run/user/1001/keyring/ssh', 'GSETTINGS_SCHEMA_DIR': '/home/shinobi-wolf/anaconda3/share/glib-2.0/schemas', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'CONDA_PYTHON_EXE': '/home/shinobi-wolf/anaconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CONDA_DEFAULT_ENV': 'base', 'GPG_AGENT_INFO': '/run/user/1001/gnupg/S.gpg-agent:0:1', '_CONDA_EXE': '/home/shinobi-wolf/anaconda3/bin/conda', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/shinobi-wolf/PhD/NeRFly/build/nbv_demo', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/shinobi-wolf/anaconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'CONDA_PREFIX': '/home/shinobi-wolf/anaconda3', 'GSETTINGS_SCHEMA_DIR_CONDA_BACKUP': '', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[1.606051] (-) TimerEvent: {}
+[1.706244] (-) TimerEvent: {}
+[1.806507] (-) TimerEvent: {}
+[1.907027] (-) TimerEvent: {}
+[1.982993] (nbv_demo) StdoutLine: {'line': b'running egg_info\n'}
+[1.983578] (nbv_demo) StdoutLine: {'line': b'creating ../../build/nbv_demo/nbv_demo.egg-info\n'}
+[2.007114] (-) TimerEvent: {}
+[2.018765] (nbv_demo) StdoutLine: {'line': b'writing ../../build/nbv_demo/nbv_demo.egg-info/PKG-INFO\n'}
+[2.019250] (nbv_demo) StdoutLine: {'line': b'writing dependency_links to ../../build/nbv_demo/nbv_demo.egg-info/dependency_links.txt\n'}
+[2.019479] (nbv_demo) StdoutLine: {'line': b'writing entry points to ../../build/nbv_demo/nbv_demo.egg-info/entry_points.txt\n'}
+[2.019677] (nbv_demo) StdoutLine: {'line': b'writing requirements to ../../build/nbv_demo/nbv_demo.egg-info/requires.txt\n'}
+[2.019842] (nbv_demo) StdoutLine: {'line': b'writing top-level names to ../../build/nbv_demo/nbv_demo.egg-info/top_level.txt\n'}
+[2.020026] (nbv_demo) StdoutLine: {'line': b"writing manifest file '../../build/nbv_demo/nbv_demo.egg-info/SOURCES.txt'\n"}
+[2.088996] (nbv_demo) StdoutLine: {'line': b"reading manifest file '../../build/nbv_demo/nbv_demo.egg-info/SOURCES.txt'\n"}
+[2.089733] (nbv_demo) StdoutLine: {'line': b"writing manifest file '../../build/nbv_demo/nbv_demo.egg-info/SOURCES.txt'\n"}
+[2.090018] (nbv_demo) StdoutLine: {'line': b'running build\n'}
+[2.090273] (nbv_demo) StdoutLine: {'line': b'running build_py\n'}
+[2.090468] (nbv_demo) StdoutLine: {'line': b'creating /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/build\n'}
+[2.090682] (nbv_demo) StdoutLine: {'line': b'creating /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/build/lib\n'}
+[2.090946] (nbv_demo) StdoutLine: {'line': b'creating /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/build/lib/nbv_demo\n'}
+[2.091143] (nbv_demo) StdoutLine: {'line': b'copying nbv_demo/__init__.py -> /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/build/lib/nbv_demo\n'}
+[2.091359] (nbv_demo) StdoutLine: {'line': b'copying nbv_demo/mission_node.py -> /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/build/lib/nbv_demo\n'}
+[2.091510] (nbv_demo) StdoutLine: {'line': b'copying nbv_demo/image_saver_node.py -> /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/build/lib/nbv_demo\n'}
+[2.091766] (nbv_demo) StdoutLine: {'line': b'running install\n'}
+[2.104870] (nbv_demo) StdoutLine: {'line': b'running install_lib\n'}
+[2.107209] (-) TimerEvent: {}
+[2.140345] (nbv_demo) StdoutLine: {'line': b'creating /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo\n'}
+[2.140585] (nbv_demo) StdoutLine: {'line': b'copying /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/build/lib/nbv_demo/__init__.py -> /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo\n'}
+[2.140781] (nbv_demo) StdoutLine: {'line': b'copying /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/build/lib/nbv_demo/mission_node.py -> /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo\n'}
+[2.141005] (nbv_demo) StdoutLine: {'line': b'copying /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/build/lib/nbv_demo/image_saver_node.py -> /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo\n'}
+[2.141608] (nbv_demo) StdoutLine: {'line': b'byte-compiling /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo/__init__.py to __init__.cpython-312.pyc\n'}
+[2.141970] (nbv_demo) StdoutLine: {'line': b'byte-compiling /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo/mission_node.py to mission_node.cpython-312.pyc\n'}
+[2.145757] (nbv_demo) StdoutLine: {'line': b'byte-compiling /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo/image_saver_node.py to image_saver_node.cpython-312.pyc\n'}
+[2.147208] (nbv_demo) StdoutLine: {'line': b'running install_data\n'}
+[2.147519] (nbv_demo) StdoutLine: {'line': b'creating /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/share/ament_index\n'}
+[2.147715] (nbv_demo) StdoutLine: {'line': b'creating /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/share/ament_index/resource_index\n'}
+[2.147974] (nbv_demo) StdoutLine: {'line': b'creating /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/share/ament_index/resource_index/packages\n'}
+[2.148383] (nbv_demo) StdoutLine: {'line': b'copying resource/nbv_demo -> /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/share/ament_index/resource_index/packages\n'}
+[2.148623] (nbv_demo) StdoutLine: {'line': b'copying package.xml -> /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/share/nbv_demo\n'}
+[2.148797] (nbv_demo) StdoutLine: {'line': b'creating /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/share/nbv_demo/launch\n'}
+[2.148969] (nbv_demo) StdoutLine: {'line': b'copying launch/mission.launch.py -> /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/share/nbv_demo/launch\n'}
+[2.149387] (nbv_demo) StdoutLine: {'line': b'creating /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/share/nbv_demo/config\n'}
+[2.149571] (nbv_demo) StdoutLine: {'line': b'copying config/mission_params.yaml -> /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/share/nbv_demo/config\n'}
+[2.149732] (nbv_demo) StdoutLine: {'line': b'running install_egg_info\n'}
+[2.188509] (nbv_demo) StdoutLine: {'line': b'Copying ../../build/nbv_demo/nbv_demo.egg-info to /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo-0.1.0-py3.12.egg-info\n'}
+[2.189872] (nbv_demo) StdoutLine: {'line': b'running install_scripts\n'}
+[2.207299] (-) TimerEvent: {}
+[2.307583] (-) TimerEvent: {}
+[2.407890] (-) TimerEvent: {}
+[2.417698] (nbv_demo) StdoutLine: {'line': b'Installing image_saver_node script to /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/nbv_demo\n'}
+[2.417967] (nbv_demo) StdoutLine: {'line': b'Installing mission_node script to /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/nbv_demo\n'}
+[2.418231] (nbv_demo) StdoutLine: {'line': b"writing list of installed files to '/home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/install.log'\n"}
+[2.464721] (nbv_demo) CommandEnded: {'returncode': 0}
+[2.487213] (nbv_demo) JobEnded: {'identifier': 'nbv_demo', 'rc': 0}
+[2.488017] (-) EventReactorShutdown: {}

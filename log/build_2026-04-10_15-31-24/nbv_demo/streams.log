@@ -1,0 +1,22 @@
+[1.524s] Invoking command in '/home/shinobi-wolf/PhD/NeRFly/src/nbv_demo': CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/nbv_demo build --build-base /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/build install --record /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/install.log --single-version-externally-managed install_data
+[1.961s] running egg_info
+[1.995s] writing ../../build/nbv_demo/nbv_demo.egg-info/PKG-INFO
+[1.995s] writing dependency_links to ../../build/nbv_demo/nbv_demo.egg-info/dependency_links.txt
+[1.995s] writing entry points to ../../build/nbv_demo/nbv_demo.egg-info/entry_points.txt
+[1.995s] writing requirements to ../../build/nbv_demo/nbv_demo.egg-info/requires.txt
+[1.996s] writing top-level names to ../../build/nbv_demo/nbv_demo.egg-info/top_level.txt
+[2.062s] reading manifest file '../../build/nbv_demo/nbv_demo.egg-info/SOURCES.txt'
+[2.066s] writing manifest file '../../build/nbv_demo/nbv_demo.egg-info/SOURCES.txt'
+[2.066s] running build
+[2.066s] running build_py
+[2.067s] running install
+[2.078s] running install_lib
+[2.112s] running install_data
+[2.112s] running install_egg_info
+[2.149s] removing '/home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo-0.1.0-py3.12.egg-info' (and everything under it)
+[2.150s] Copying ../../build/nbv_demo/nbv_demo.egg-info to /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo-0.1.0-py3.12.egg-info
+[2.154s] running install_scripts
+[2.371s] Installing image_saver_node script to /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/nbv_demo
+[2.372s] Installing mission_node script to /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/nbv_demo
+[2.372s] writing list of installed files to '/home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/install.log'
+[2.416s] Invoked command in '/home/shinobi-wolf/PhD/NeRFly/src/nbv_demo' returned '0': CONDA_PROMPT_MODIFIER=(base) DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/nbv_demo build --build-base /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/build install --record /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/install.log --single-version-externally-managed install_data

@@ -1,0 +1,43 @@
+running egg_info
+creating ../../build/nbv_demo/nbv_demo.egg-info
+writing ../../build/nbv_demo/nbv_demo.egg-info/PKG-INFO
+writing dependency_links to ../../build/nbv_demo/nbv_demo.egg-info/dependency_links.txt
+writing entry points to ../../build/nbv_demo/nbv_demo.egg-info/entry_points.txt
+writing requirements to ../../build/nbv_demo/nbv_demo.egg-info/requires.txt
+writing top-level names to ../../build/nbv_demo/nbv_demo.egg-info/top_level.txt
+writing manifest file '../../build/nbv_demo/nbv_demo.egg-info/SOURCES.txt'
+reading manifest file '../../build/nbv_demo/nbv_demo.egg-info/SOURCES.txt'
+writing manifest file '../../build/nbv_demo/nbv_demo.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/build
+creating /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/build/lib
+creating /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/build/lib/nbv_demo
+copying nbv_demo/__init__.py -> /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/build/lib/nbv_demo
+copying nbv_demo/mission_node.py -> /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/build/lib/nbv_demo
+copying nbv_demo/image_saver_node.py -> /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/build/lib/nbv_demo
+running install
+running install_lib
+creating /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo
+copying /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/build/lib/nbv_demo/__init__.py -> /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo
+copying /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/build/lib/nbv_demo/mission_node.py -> /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo
+copying /home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/build/lib/nbv_demo/image_saver_node.py -> /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo
+byte-compiling /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo/mission_node.py to mission_node.cpython-312.pyc
+byte-compiling /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo/image_saver_node.py to image_saver_node.cpython-312.pyc
+running install_data
+creating /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/share/ament_index
+creating /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/share/ament_index/resource_index
+creating /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/share/ament_index/resource_index/packages
+copying resource/nbv_demo -> /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/share/ament_index/resource_index/packages
+copying package.xml -> /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/share/nbv_demo
+creating /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/share/nbv_demo/launch
+copying launch/mission.launch.py -> /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/share/nbv_demo/launch
+creating /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/share/nbv_demo/config
+copying config/mission_params.yaml -> /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/share/nbv_demo/config
+running install_egg_info
+Copying ../../build/nbv_demo/nbv_demo.egg-info to /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo-0.1.0-py3.12.egg-info
+running install_scripts
+Installing image_saver_node script to /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/nbv_demo
+Installing mission_node script to /home/shinobi-wolf/PhD/NeRFly/install/nbv_demo/lib/nbv_demo
+writing list of installed files to '/home/shinobi-wolf/PhD/NeRFly/build/nbv_demo/install.log'

@@ -1,0 +1,3 @@
+[console_scripts]
+image_saver_node = nbv_demo.image_saver_node:main
+mission_node = nbv_demo.mission_node:main

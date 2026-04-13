@@ -1,0 +1,31 @@
+/**:
+  ros__parameters:
+
+    # ── Orbit geometry ────────────────────────────────────────────────────────
+    # Horizontal radius of the orbit circle in metres.
+    orbit_radius: 5.0
+
+    # Flight altitude (AGL) during the orbit in metres.
+    orbit_height: 3.0
+
+    # Number of evenly-spaced capture points on the orbit circle.
+    # 36 = one image every 10 degrees of arc.
+    n_images: 36
+
+    # XY coordinates of the orbit centre (local ENU frame, metres).
+    target_x: 0.0
+    target_y: 0.0
+
+    # ── Waypoint tracking ─────────────────────────────────────────────────────
+    # How close (metres) the drone must be to a waypoint before it is
+    # considered "reached".
+    waypoint_tolerance: 0.3
+
+    # How long (seconds) to hold position at each waypoint before triggering
+    # image capture.  Gives the camera time to stabilise.
+    waypoint_dwell: 0.5
+
+    # ── Image saving ──────────────────────────────────────────────────────────
+    # Directory where captured PNG frames are written.
+    # Tilde expansion is applied by image_saver_node.
+    image_save_dir: "~/nbv_images"
