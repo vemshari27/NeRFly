@@ -76,9 +76,13 @@ def generate_launch_description():
     # ── 2. ros_gz_bridge: Gazebo camera topics → ROS 2 ───────────────────────
     # Bridge string format for one-way gz→ros: gz_topic@ros_type[gz_type
     # The '[' indicates the message flows FROM Gazebo INTO ROS 2 only.
+    #
+    # The world name must match PX4_GZ_WORLD and the <world name="..."> in the
+    # SDF.  Gazebo namespaces all topics under /world/<gz_world>/...
+    gz_world = 'nbv_scene'
     gz_base = (
-        '/world/default/model/x500_mono_cam_0'
-        '/link/camera_link/sensor/camera'
+        f'/world/{gz_world}/model/x500_mono_cam_0'
+        f'/link/camera_link/sensor/camera'
     )
     bridge_node = Node(
         package    = 'ros_gz_bridge',

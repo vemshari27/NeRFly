@@ -164,7 +164,7 @@ source /opt/ros/jazzy/setup.bash
 # 3. Build the ROS 2 package  (once, or after any code change)
 cd ~/PhD/NeRFly
 colcon build --packages-select nbv_demo
-source install/setup.bash
+source install/setup.zsh   # use .zsh not .bash — shell is zsh
 
 # 4. Launch the demo  (Terminal B)
 ros2 launch nbv_demo mission.launch.py
@@ -188,3 +188,7 @@ watch -n1 ls ~/nbv_images/
 - [ ] Python packages installed: `pip install numpy opencv-python scipy matplotlib transforms3d pyquaternion pycolmap empy==3.3.4 catkin-pkg lark colcon-common-extensions`
 - [ ] COLMAP installed (apt or built from source with CUDA)
 - [ ] Workspace built: `cd ~/PhD/NeRFly && colcon build --packages-select nbv_demo`
+
+# User Preferences
+- Only update PROGRESS.md when asked for. Not after every edit
+  

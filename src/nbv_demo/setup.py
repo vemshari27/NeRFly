@@ -34,6 +34,8 @@ setup(
             'mission_node      = nbv_demo.mission_node:main',
             # ros2 run nbv_demo image_saver_node
             'image_saver_node  = nbv_demo.image_saver_node:main',
+            # ros2 run nbv_demo snapshot_node  (Phase 2 camera verification)
+            'snapshot_node     = nbv_demo.snapshot_node:main',
         ],
     },
 )

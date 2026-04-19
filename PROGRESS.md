@@ -74,6 +74,59 @@ src/nbv_demo/
 3. `mission_node`
 4. `image_saver_node`
 
+---
+
+## Phase 2: Custom World + Camera Verification
+
+**Goal:** Build a Gazebo world containing a target object and confirm the drone
+camera can see it — without flying the drone.
+
+**Completion criteria:** Launch PX4 SITL with the custom world, bridge the
+camera to ROS 2, run `snapshot_node`, and save a PNG that shows the target
+object.
+
+### What was built
+
+**`nbv_scene.sdf`** — Custom Gazebo world at
+`PX4-Autopilot/Tools/simulation/gz/worlds/nbv_scene.sdf`:
+- Identical physics / ground plane / sun to `default.sdf` so PX4 SITL works
+  unchanged.
+- Adds a static 1 × 1 × 1 m **red box** (`target_box`) at `(5, 0, 0.5)`:
+  5 m along the +X axis (East), sitting flush on the ground, directly in front
+  of the drone's forward-facing camera at spawn.
+
+**`snapshot_node.py`** — New standalone ROS 2 node in `nbv_demo`:
+- Subscribes to the Gazebo camera topic (via `ros_gz_bridge`).
+- Waits for the first frame, saves it as `snapshot.png` to `~/nbv_images/`,
+  then shuts down cleanly.
+- No MAVROS, no flight — purely for camera pipeline verification.
+
+### Launch sequence (Phase 2)
+
+```bash
+# Terminal A — PX4 SITL with the custom world (no conda env needed)
+cd ~/PhD/nerf/PX4-Autopilot
+PX4_GZ_WORLD=nbv_scene make px4_sitl gz_x500_mono_cam
+
+# Terminal B — Bridge camera topics to ROS 2
+conda deactivate
+source /opt/ros/jazzy/setup.bash
+ros2 run ros_gz_bridge parameter_bridge \
+  "/world/default/model/x500_mono_cam_0/link/camera_link/sensor/camera/image@sensor_msgs/msg/Image[gz.msgs.Image" \
+  "/world/default/model/x500_mono_cam_0/link/camera_link/sensor/camera/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo"
+
+# Terminal C — Rebuild and grab one snapshot
+conda activate nerfly
+source /opt/ros/jazzy/setup.bash
+cd ~/PhD/nerf/NeRFly
+colcon build --packages-select nbv_demo
+source install/setup.zsh
+ros2 run nbv_demo snapshot_node
+# → ~/nbv_images/snapshot.png should show the red box
+```
+
+---
+
 ### Bug Fix: MAVROS crash on launch
 
 **Symptom:** `mavros_node` died immediately with `invalid allocator` /

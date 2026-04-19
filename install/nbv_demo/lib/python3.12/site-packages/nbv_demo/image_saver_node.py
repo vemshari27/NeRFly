@@ -42,13 +42,6 @@ from std_msgs.msg import Empty
 from cv_bridge import CvBridge
 
 
-# Full Gazebo camera topic as published by ros_gz_bridge.
-CAMERA_TOPIC = (
-    '/world/default/model/x500_mono_cam_0'
-    '/link/camera_link/sensor/camera/image'
-)
-
-
 class ImageSaverNode(Node):
 
     def __init__(self):
@@ -56,8 +49,17 @@ class ImageSaverNode(Node):
 
         # ── Parameters ────────────────────────────────────────────────────────
         self.declare_parameter('image_save_dir', '~/nbv_images')
+        self.declare_parameter('gz_world',       'nbv_scene')
+
         raw_dir        = self.get_parameter('image_save_dir').value
+        gz_world       = self.get_parameter('gz_world').value
         self.save_dir  = os.path.expanduser(raw_dir)
+
+        # Camera topic is namespaced under the Gazebo world name.
+        camera_topic = (
+            f'/world/{gz_world}/model/x500_mono_cam_0'
+            f'/link/camera_link/sensor/camera/image'
+        )
 
         os.makedirs(self.save_dir, exist_ok=True)
         self.get_logger().info(f'Images will be saved to: {self.save_dir}')
@@ -77,7 +79,7 @@ class ImageSaverNode(Node):
         # ── Subscribers ───────────────────────────────────────────────────────
         self.create_subscription(
             Image,
-            CAMERA_TOPIC,
+            camera_topic,
             self._image_cb,
             qos_be,
         )
@@ -90,7 +92,7 @@ class ImageSaverNode(Node):
 
         self.get_logger().info(
             f'ImageSaverNode ready.\n'
-            f'  Listening on camera topic : {CAMERA_TOPIC}\n'
+            f'  Listening on camera topic : {camera_topic}\n'
             f'  Listening for triggers on : /nbv/capture'
         )
 

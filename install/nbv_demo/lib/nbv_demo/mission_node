@@ -1,4 +1,4 @@
-#!/home/shinobi-wolf/anaconda3/envs/nerfly/bin/python3.10
+#!/usr/bin/python3
 # EASY-INSTALL-ENTRY-SCRIPT: 'nbv-demo==0.1.0','console_scripts','mission_node'
 import re
 import sys

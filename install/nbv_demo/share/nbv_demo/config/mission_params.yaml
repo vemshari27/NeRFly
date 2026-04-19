@@ -25,6 +25,12 @@
     # image capture.  Gives the camera time to stabilise.
     waypoint_dwell: 0.5
 
+    # ── Gazebo world ──────────────────────────────────────────────────────────
+    # Name of the Gazebo world (must match PX4_GZ_WORLD and <world name="...">
+    # in the SDF).  Used to construct the camera topic, which Gazebo namespaces
+    # under /world/<gz_world>/model/...
+    gz_world: "nbv_scene"
+
     # ── Image saving ──────────────────────────────────────────────────────────
     # Directory where captured PNG frames are written.
     # Tilde expansion is applied by image_saver_node.

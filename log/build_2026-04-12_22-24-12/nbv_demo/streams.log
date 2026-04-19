@@ -1,0 +1,23 @@
+[0.605s] Invoking command in '/home/shinobi-owl/PhD/nerf/NeRFly/src/nbv_demo': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/shinobi-owl/PhD/nerf/NeRFly/build/nbv_demo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shinobi-owl/PhD/nerf/NeRFly/install/nbv_demo/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/nbv_demo build --build-base /home/shinobi-owl/PhD/nerf/NeRFly/build/nbv_demo/build install --record /home/shinobi-owl/PhD/nerf/NeRFly/build/nbv_demo/install.log --single-version-externally-managed install_data
+[0.801s] running egg_info
+[0.815s] writing ../../build/nbv_demo/nbv_demo.egg-info/PKG-INFO
+[0.815s] writing dependency_links to ../../build/nbv_demo/nbv_demo.egg-info/dependency_links.txt
+[0.815s] writing entry points to ../../build/nbv_demo/nbv_demo.egg-info/entry_points.txt
+[0.815s] writing requirements to ../../build/nbv_demo/nbv_demo.egg-info/requires.txt
+[0.815s] writing top-level names to ../../build/nbv_demo/nbv_demo.egg-info/top_level.txt
+[0.844s] reading manifest file '../../build/nbv_demo/nbv_demo.egg-info/SOURCES.txt'
+[0.844s] writing manifest file '../../build/nbv_demo/nbv_demo.egg-info/SOURCES.txt'
+[0.844s] running build
+[0.844s] running build_py
+[0.845s] running install
+[0.849s] running install_lib
+[0.864s] running install_data
+[0.864s] running install_egg_info
+[0.879s] removing '/home/shinobi-owl/PhD/nerf/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo-0.1.0-py3.12.egg-info' (and everything under it)
+[0.879s] Copying ../../build/nbv_demo/nbv_demo.egg-info to /home/shinobi-owl/PhD/nerf/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo-0.1.0-py3.12.egg-info
+[0.879s] running install_scripts
+[0.975s] Installing image_saver_node script to /home/shinobi-owl/PhD/nerf/NeRFly/install/nbv_demo/lib/nbv_demo
+[0.976s] Installing mission_node script to /home/shinobi-owl/PhD/nerf/NeRFly/install/nbv_demo/lib/nbv_demo
+[0.976s] Installing snapshot_node script to /home/shinobi-owl/PhD/nerf/NeRFly/install/nbv_demo/lib/nbv_demo
+[0.976s] writing list of installed files to '/home/shinobi-owl/PhD/nerf/NeRFly/build/nbv_demo/install.log'
+[0.996s] Invoked command in '/home/shinobi-owl/PhD/nerf/NeRFly/src/nbv_demo' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/shinobi-owl/PhD/nerf/NeRFly/build/nbv_demo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shinobi-owl/PhD/nerf/NeRFly/install/nbv_demo/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/nbv_demo build --build-base /home/shinobi-owl/PhD/nerf/NeRFly/build/nbv_demo/build install --record /home/shinobi-owl/PhD/nerf/NeRFly/build/nbv_demo/install.log --single-version-externally-managed install_data

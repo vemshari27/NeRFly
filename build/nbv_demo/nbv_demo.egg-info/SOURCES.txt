@@ -13,4 +13,5 @@ launch/mission.launch.py
 nbv_demo/__init__.py
 nbv_demo/image_saver_node.py
 nbv_demo/mission_node.py
+nbv_demo/snapshot_node.py
 resource/nbv_demo
