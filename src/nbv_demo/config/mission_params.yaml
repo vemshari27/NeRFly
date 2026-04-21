@@ -29,7 +29,7 @@
     # Name of the Gazebo world (must match PX4_GZ_WORLD and <world name="...">
     # in the SDF).  Used to construct the camera topic, which Gazebo namespaces
     # under /world/<gz_world>/model/...
-    gz_world: "nbv_scene_2"
+    gz_world: "nbv_scene"
 
     # ── Image saving ──────────────────────────────────────────────────────────
     # Directory where captured PNG frames are written.

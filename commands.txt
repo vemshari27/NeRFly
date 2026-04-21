@@ -1,0 +1,11 @@
+1. Launch GZ world
+./scripts/launch_gz_world.sh
+
+2. Ros gazebo bridge
+ros2 run ros_gz_bridge parameter_bridge "/world/nbv_scene/model/x500_mono_cam_0/link/camera_link/sensor/camera/image@sensor_msgs/msg/Image[gz.msgs.Image" "/world/nbv_scene/model/x500_mono_cam_0/link/camera_link/sensor/camera/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo"
+
+3. Colcon build
+colcon build --packages-select nbv_demo && source install/setup.zsh
+
+4. snapshort node
+ros2 run nbv_demo snapshot_node --ros-args --params-file src/nbv_demo/config/mission_params.yaml

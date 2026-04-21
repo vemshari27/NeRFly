@@ -54,7 +54,7 @@ class SnapshotNode(Node):
 
         # ── Parameters ────────────────────────────────────────────────────────
         self.declare_parameter('image_save_dir', '~/nbv_images')
-        self.declare_parameter('gz_world',       'nbv_scene_2')
+        self.declare_parameter('gz_world',       'nbv_scene')
 
         raw_dir       = self.get_parameter('image_save_dir').value
         gz_world      = self.get_parameter('gz_world').value
