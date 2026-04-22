@@ -101,7 +101,7 @@ Camera topics (published by Gazebo, bridged to ROS 2 by `ros_gz_bridge`):
 | `target_y` | `0.0` | Orbit centre Y (local ENU, metres) |
 | `waypoint_tolerance` | `0.3` | Arrival threshold in metres |
 | `waypoint_dwell` | `0.5` | Hold time at each WP before capture (s) |
-| `image_save_dir` | `~/nbv_images` | Output directory for PNG frames |
+| `image_save_dir` | `data/captures` | Output directory for PNG frames (workspace root) |
 
 ---
 
@@ -138,13 +138,15 @@ and aborts.
 
 **Fix (already applied in `mission.launch.py`):**
 ```python
-'plugin_blocklist': [
+'plugin_denylist': [
     'companion_process_status',
     'adsb',
     'cellular_status',
     'cam_imu_sync',
 ]
 ```
+Note: the correct MAVROS2 parameter name is `plugin_denylist`. MAVROS silently
+ignores unknown parameter names, so `plugin_blocklist` was a no-op.
 
 ---
 
@@ -170,7 +172,7 @@ source install/setup.zsh   # use .zsh not .bash — shell is zsh
 ros2 launch nbv_demo mission.launch.py
 
 # 5. Watch saved images  (Terminal C, optional)
-watch -n1 ls ~/nbv_images/
+watch -n1 ls data/captures/
 ```
 
 ---

@@ -1,0 +1,10 @@
+# colcon build artifacts — generated, never commit
+build/
+install/
+log/
+
+tmp
+
+# Captured images from NBV missions — too large for git
+data/captures/*.png
+data/captures/*.jpg

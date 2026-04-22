@@ -91,9 +91,7 @@ object.
 `PX4-Autopilot/Tools/simulation/gz/worlds/nbv_scene.sdf`:
 - Identical physics / ground plane / sun to `default.sdf` so PX4 SITL works
   unchanged.
-- Adds a static 1 × 1 × 1 m **red box** (`target_box`) at `(5, 0, 0.5)`:
-  5 m along the +X axis (East), sitting flush on the ground, directly in front
-  of the drone's forward-facing camera at spawn.
+- Adds a SUV
 
 **`snapshot_node.py`** — New standalone ROS 2 node in `nbv_demo`:
 - Subscribes to the Gazebo camera topic (via `ros_gz_bridge`).
@@ -105,24 +103,16 @@ object.
 
 ```bash
 # Terminal A — PX4 SITL with the custom world (no conda env needed)
-cd ~/PhD/nerf/PX4-Autopilot
-PX4_GZ_WORLD=nbv_scene make px4_sitl gz_x500_mono_cam
+./scripts/launch_gz_world.sh
 
 # Terminal B — Bridge camera topics to ROS 2
-conda deactivate
-source /opt/ros/jazzy/setup.bash
-ros2 run ros_gz_bridge parameter_bridge \
-  "/world/default/model/x500_mono_cam_0/link/camera_link/sensor/camera/image@sensor_msgs/msg/Image[gz.msgs.Image" \
-  "/world/default/model/x500_mono_cam_0/link/camera_link/sensor/camera/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo"
+ros2 run ros_gz_bridge parameter_bridge "/world/nbv_scene/model/x500_mono_cam_0/link/camera_link/sensor/camera/image@sensor_msgs/msg/Image[gz.msgs.Image" "/world/nbv_scene/model/x500_mono_cam_0/link/camera_link/sensor/camera/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo"
+
 
 # Terminal C — Rebuild and grab one snapshot
-conda activate nerfly
-source /opt/ros/jazzy/setup.bash
-cd ~/PhD/nerf/NeRFly
-colcon build --packages-select nbv_demo
-source install/setup.zsh
-ros2 run nbv_demo snapshot_node
-# → ~/nbv_images/snapshot.png should show the red box
+colcon build --packages-select nbv_demo && source install/setup.zsh
+ros2 run nbv_demo snapshot_node --ros-args --params-file src/nbv_demo/config/mission_params.yaml
+# → ~/nbv_images/snapshot.png should show the SUV
 ```
 
 ---
@@ -148,3 +138,57 @@ file to skip the offending plugin and other unused plugins:
     'cam_imu_sync',
 ]
 ```
+
+## Phase 3: Autonomous Orbit Mission
+
+**Goal:** Fly the drone autonomously around the target object, capturing images
+at N equidistant waypoints to produce a complete photogrammetric dataset.
+
+**Completion criteria:** The drone arms, climbs, orbits the SUV at the
+configured radius and height, fires `/nbv/capture` at each waypoint, lands,
+and `data/captures/` contains N PNG frames.
+
+**Status: Complete.**
+
+### What was built / wired up
+
+The flight logic was already implemented in `mission_node.py` during exploratory
+development.  Phase 3 wires it together with the custom world:
+
+**`mission_params.yaml` — orbit centre updated:**
+- `target_x: 5.0` — matches the SUV position in `nbv_scene.sdf`.
+- Orbit at radius 5 m, height 3 m, 36 images (every 10°).
+
+**`scripts/launch_gz_world.sh` — symlink fixed:**
+- Now uses `ln -sf` (force) so any edit to `worlds/nbv_scene.sdf` is
+  immediately reflected in PX4's worlds directory without a manual copy.
+
+**`scripts/run_mission.sh` — new:**
+- Activates the `nerfly` conda env, sources ROS 2 Jazzy, builds `nbv_demo`,
+  sources the install overlay, and launches `mission.launch.py`.
+
+### Launch sequence (Phase 3)
+
+```bash
+# Terminal A — PX4 SITL with the custom world
+bash scripts/launch_gz_world.sh
+
+# Terminal B — Full mission (MAVROS + bridge + orbit + image saver)
+bash scripts/run_mission.sh
+# → watch data/captures/ fill up with frame_000.png … frame_099.png
+```
+
+### Mission flow recap
+
+```
+WAIT_FCU → PREARM_STREAM → WAIT_OFFBOARD → WAIT_ARM →
+TAKEOFF  → ORBIT (36 WPs, capture at each) → RETURN_HOME → WAIT_LAND → DONE
+```
+
+- Setpoints streamed at 20 Hz throughout (PX4 OFFBOARD requirement).
+- At each waypoint: hold for `waypoint_dwell` (0.5 s) then fire `/nbv/capture`.
+- `image_saver_node` catches each trigger and writes the latest camera frame.
+
+**Image output directory:** `data/captures/` (workspace root, gitignored except
+for the `.gitkeep` placeholder).  Configured via `image_save_dir` in
+`mission_params.yaml`.

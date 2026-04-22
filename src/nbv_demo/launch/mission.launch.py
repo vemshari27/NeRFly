@@ -12,16 +12,14 @@ What this file starts
 Prerequisites (must be running BEFORE this launch file)
 -------------------------------------------------------
   Terminal A:  PX4 SITL + Gazebo Harmonic
-      cd ~/PX4-Autopilot
-      make px4_sitl gz_x500_mono_cam
+      bash scripts/launch_gz_world.sh
 
   (PX4 SITL opens a MAVLink UDP port at localhost:14540 for MAVROS.)
 
 Usage
 -----
-  # From the workspace root:
-  source install/setup.bash
-  ros2 launch nbv_demo mission.launch.py
+  # From the workspace root (after colcon build):
+  bash scripts/run_mission.sh
 
 Optional overrides
 ------------------
@@ -36,41 +34,38 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
 
-    # Path to the installed config directory (populated by setup.py data_files).
-    pkg_share  = get_package_share_directory('nbv_demo')
-    params_file = os.path.join(pkg_share, 'config', 'mission_params.yaml')
+    pkg_share        = get_package_share_directory('nbv_demo')
+    params_file      = os.path.join(pkg_share, 'config', 'mission_params.yaml')
+    # MAVROS plugin denylist loaded as a YAML file — the reliable method.
+    # Passing plugin lists as inline Python dict parameters does not work
+    # because MAVROS reads the denylist before the ROS 2 parameter server is
+    # fully initialised.  A YAML file loaded at launch time is applied first.
+    pluginlists_file = os.path.join(pkg_share, 'config', 'mavros_pluginlists.yaml')
 
     # ── 1. MAVROS2 ────────────────────────────────────────────────────────────
     # Connects to PX4 SITL via UDP.  Default PX4 SITL MAVLink port is 14540.
     # gcs_url='' disables the GCS forwarding port (not needed for a demo).
     #
-    # plugin_blocklist: There is a known crash in ros-jazzy-mavros where the
-    # companion_process_status plugin attempts to create a subscription to a
-    # topic that already exists with an incompatible type, which cascades into
-    # an 'invalid allocator' error and kills the node.  Blocking that plugin
-    # avoids the crash.  None of the plugins below are needed for this mission.
+    # The companion_process_status plugin causes a known crash in ros-jazzy-mavros:
+    # it subscribes to a topic already registered by sys_status with an
+    # incompatible type, which corrupts RCL's allocator state and aborts the node.
+    # mavros_pluginlists.yaml denies that plugin (and others unused by this mission).
     mavros_node = Node(
         package    = 'mavros',
         executable = 'mavros_node',
-        name       = 'mavros',
+        # name       = 'mavros',
         output     = 'screen',
-        parameters = [
-            {
-                'fcu_url':             'udp://:14540@localhost:14557',
-                'gcs_url':             '',
-                'target_system_id':    1,
-                'target_component_id': 1,
-                # Publish TF so rviz2 can visualise the vehicle frame.
-                'local_position/tf/send': True,
-                # Block plugins that conflict or are unused by this mission.
-                'plugin_blocklist': [
-                    'companion_process_status',  # causes topic-type conflict crash
-                    'adsb',
-                    'cellular_status',
-                    'cam_imu_sync',
-                ],
-            }
-        ],
+        parameters=[{'fcu_url': 'udp://:14540@', 'gcs_url': '',}],
+        # parameters = [
+        #     pluginlists_file,   # plugin_denylist — must come before the dict
+        #     {
+        #         'fcu_url':                'udp://:14540@localhost:14557',
+        #         'gcs_url':                '',
+        #         'target_system_id':       1,
+        #         'target_component_id':    1,
+        #         'local_position/tf/send': True,
+        #     },
+        # ],
     )
 
     # ── 2. ros_gz_bridge: Gazebo camera topics → ROS 2 ───────────────────────
@@ -80,14 +75,14 @@ def generate_launch_description():
     # The world name must match PX4_GZ_WORLD and the <world name="..."> in the
     # SDF.  Gazebo namespaces all topics under /world/<gz_world>/...
     gz_world = 'nbv_scene'
-    gz_base = (
+    gz_base  = (
         f'/world/{gz_world}/model/x500_mono_cam_0'
         f'/link/camera_link/sensor/camera'
     )
     bridge_node = Node(
         package    = 'ros_gz_bridge',
         executable = 'parameter_bridge',
-        name       = 'gz_ros_bridge',
+        # name       = 'gz_ros_bridge',
         output     = 'screen',
         arguments  = [
             # Camera raw image: gz → ros

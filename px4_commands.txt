@@ -1,0 +1,41 @@
+# PX4 prompts
+
+1. Disable RC (Radio Control) Failsafe: param set NAV_RCL_ACT 0
+2. Disable GCS (Data Link) Failsafe: param set NAV_DLL_ACT 0
+3. Allow arming without a GCS connection: param set COM_RCL_EXCEPT 4
+
+# MAVROS + ROS2 Bash commmands
+
+1. cd ~/PX4-Autopilot
+make px4_sitl gz_x500_mono_cam
+2. Start MAVROS
+ros2 run mavros mavros_node \
+  --ros-args \
+  -p fcu_url:=udp://:14540@ \
+  -p gcs_url:=
+3. Verify connection
+ros2 topic echo /mavros/state
+4. Start setpoint stream (KEEP RUNNING)
+ros2 topic pub /mavros/setpoint_position/local geometry_msgs/msg/PoseStamped "
+header:
+  frame_id: 'map'
+pose:
+  position:
+    x: 0.0
+    y: 0.0
+    z: 2.0
+  orientation:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+" --rate 20
+5. Wait ~2–3 seconds
+6. Switch to OFFBOARD
+ros2 service call /mavros/set_mode mavros_msgs/srv/SetMode "{custom_mode: 'OFFBOARD'}"
+7. Arm the drone
+ros2 service call /mavros/cmd/arming mavros_msgs/srv/CommandBool "{value: true}"
+
+# NBV_DEMO commmands
+1. ./scripts/launch_gz_world.sh
+2. bash scripts/run_mission.sh

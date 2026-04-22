@@ -10,10 +10,11 @@
 
     # Number of evenly-spaced capture points on the orbit circle.
     # 36 = one image every 10 degrees of arc.
-    n_images: 36
+    n_images: 100
 
     # XY coordinates of the orbit centre (local ENU frame, metres).
-    target_x: 0.0
+    # Set to match the target object's position in nbv_scene.sdf.
+    target_x: 5.0
     target_y: 0.0
 
     # ── Waypoint tracking ─────────────────────────────────────────────────────
@@ -34,4 +35,4 @@
     # ── Image saving ──────────────────────────────────────────────────────────
     # Directory where captured PNG frames are written.
     # Tilde expansion is applied by image_saver_node.
-    image_save_dir: "~/nbv_images"
+    image_save_dir: "/home/shinobi-owl/PhD/nerf/NeRFly/data/captures"

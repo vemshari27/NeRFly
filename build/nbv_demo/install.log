@@ -9,6 +9,7 @@
 /home/shinobi-owl/PhD/nerf/NeRFly/install/nbv_demo/share/ament_index/resource_index/packages/nbv_demo
 /home/shinobi-owl/PhD/nerf/NeRFly/install/nbv_demo/share/nbv_demo/package.xml
 /home/shinobi-owl/PhD/nerf/NeRFly/install/nbv_demo/share/nbv_demo/launch/mission.launch.py
+/home/shinobi-owl/PhD/nerf/NeRFly/install/nbv_demo/share/nbv_demo/config/mavros_pluginlists.yaml
 /home/shinobi-owl/PhD/nerf/NeRFly/install/nbv_demo/share/nbv_demo/config/mission_params.yaml
 /home/shinobi-owl/PhD/nerf/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo-0.1.0-py3.12.egg-info/PKG-INFO
 /home/shinobi-owl/PhD/nerf/NeRFly/install/nbv_demo/lib/python3.12/site-packages/nbv_demo-0.1.0-py3.12.egg-info/top_level.txt

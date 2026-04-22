@@ -8,6 +8,7 @@ setup.py
 ../../build/nbv_demo/nbv_demo.egg-info/requires.txt
 ../../build/nbv_demo/nbv_demo.egg-info/top_level.txt
 ../../build/nbv_demo/nbv_demo.egg-info/zip-safe
+config/mavros_pluginlists.yaml
 config/mission_params.yaml
 launch/mission.launch.py
 nbv_demo/__init__.py

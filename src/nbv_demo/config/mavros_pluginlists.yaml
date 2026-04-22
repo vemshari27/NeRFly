@@ -1,0 +1,20 @@
+/**:
+  ros__parameters:
+    # Load ONLY the plugins this mission needs.
+    # An allowlist is safer than a denylist: new plugin conflicts in future
+    # MAVROS versions cannot affect us because unlisted plugins never load.
+    #
+    # Plugins required by mission_node.py:
+    #   sys_status      → /mavros/state          (connected, armed, mode)
+    #   sys_time        → FCU ↔ ROS clock sync   (required for stable operation)
+    #   local_position  → /mavros/local_position/pose
+    #   setpoint_position → /mavros/setpoint_position/local
+    #   command         → /mavros/cmd/arming  +  /mavros/set_mode
+    #   param           → FCU parameter sync (needed for MAVROS initialisation)
+    plugin_allowlist:
+      - sys_status
+      - sys_time
+      - local_position
+      - setpoint_position
+      - command
+      - param
